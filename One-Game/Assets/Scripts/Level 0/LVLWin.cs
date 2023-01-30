@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class LVLWin : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private Rigidbody2D _rigidbody2D;
+   
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        _rigidbody2D.transform.position = new Vector2(-15, 10);
+    }
+
+    private void FixedUpdate()
+    {
+       
     }
 }
