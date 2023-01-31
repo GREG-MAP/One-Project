@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Traps : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D _rigidbody2D;
+    [SerializeField] private Collider2D cl;
+    [SerializeField] private float speed = 3f;
+
+    private bool H = true;
     void Start()
     {
         
@@ -13,11 +15,34 @@ public class Traps : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _rigidbody2D.transform.position = new Vector2(-1500, 10);
+        cl.transform.position = new Vector2(-1500, 10);
     }
 
     private void FixedUpdate()
     {
-       
+   
+        if(H == true)
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y - Time.deltaTime * speed);
+        }
+
+        if(transform.position.y < 9.5f)
+        {
+            transform.position = new Vector2(transform.position.x, 9.5f);
+
+            H = false;
+
+        }else if(H == false)
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y + Time.deltaTime * speed);
+        }
+
+        if(transform.position.y > 20)
+        {
+            transform.position = new Vector2(transform.position.x, 20);
+
+            H = true;
+        }
+
     }
 }
