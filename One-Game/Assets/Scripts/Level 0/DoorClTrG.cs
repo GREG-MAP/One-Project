@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DoorClTrG : MonoBehaviour
 {
-    float speed = 3f;
-    bool MoveDoor = true;
+    float speed = 5f;
+    [SerializeField] bool MoveDoor = true;
     [SerializeField] public Collider2D cl;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (cl.transform.position.y > 23)
+        if (cl.bounds.center.y < 14.6)
         {
             MoveDoor = false;
         }
@@ -20,9 +20,9 @@ public class DoorClTrG : MonoBehaviour
             cl.transform.position = new Vector2(cl.transform.position.x, cl.transform.position.y - speed * Time.deltaTime);
         }
 
-        if (cl.transform.position.y < 14.6)
+        if (cl.bounds.center.y > 14.6)
         {
-            MoveDoor = false;
+            MoveDoor = true;
         }
     }
 }

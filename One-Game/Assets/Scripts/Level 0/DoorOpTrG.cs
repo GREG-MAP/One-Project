@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DoorOpTrG : MonoBehaviour
 {
-    float speed = 3f;
-    bool MoveDoor = true;
+    float speed = 5f;
+    [SerializeField] bool MoveDoor = true;
     [SerializeField] public Collider2D cl;
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -18,6 +18,12 @@ public class DoorOpTrG : MonoBehaviour
         if (MoveDoor == true)
         {
             cl.transform.position = new Vector2(cl.transform.position.x, cl.transform.position.y + speed * Time.deltaTime);
+        }else if (cl.transform.position.y < 14.6)
+        {
+            MoveDoor = true;
         }
+
     }
+
+
 }
