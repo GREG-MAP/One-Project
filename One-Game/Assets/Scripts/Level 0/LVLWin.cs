@@ -5,7 +5,7 @@ using UnityEngine;
 public class LVLWin : MonoBehaviour
 {
     [SerializeField]
-    private Rigidbody2D _rigidbody2D;
+    private Rigidbody2D rb;
    
     void Start()
     {
@@ -14,7 +14,7 @@ public class LVLWin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _rigidbody2D.transform.position = new Vector2(-15, 10);
+        rb.transform.position = new Vector2(-15, 10);
     }
 
     private void FixedUpdate()

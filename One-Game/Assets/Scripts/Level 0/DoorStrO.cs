@@ -15,15 +15,6 @@ public class DoorStrO : MonoBehaviour
     private void FixedUpdate()
     {
 
-       if(transform.position.y > 23)
-        {
-            MoveDoor = false;
-
-        }
-
-       if(MoveDoor)
-        {
-            transform.position = new Vector2(transform.position.x, transform.position.y + speed * Time.deltaTime);
-        }
+       
     }
 }

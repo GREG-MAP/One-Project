@@ -16,35 +16,45 @@ public class PlayerMove : MonoBehaviour
     public LayerMask GroundMask;
 
     public int extraJumps;
+    public int numberJumps;
     void Start()
     {
         rb.GetComponent<Rigidbody2D>();
+
+        extraJumps = numberJumps;
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, GroundMask);
 
         if (isGround == true)
         {
-            extraJumps = 10;
+            extraJumps = numberJumps;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space) && extraJumps > 0)
+        {
+            extraJumps--;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
         {
+            extraJumps--;
+
             rb.velocity = Vector2.up * jumpForce;
 
-            --extraJumps;
-
-        }else if(Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGround == true)
-        {
-            rb.velocity = Vector2.up * jumpForce;
         }
+        else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGround == true) {  }
 
-        dirX = Input.GetAxis("Horizontal");
+        
+
+
+            dirX = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
 
     }
 }
+  
