@@ -7,7 +7,7 @@ public class MenyMeneger : MonoBehaviour
 
     public void _TimeOut()
     {
-        Invoke("Exit", 2f);
+        Invoke("Exit", 0.4f);
     }
     public void PlayGame()
     {

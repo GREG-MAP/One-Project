@@ -8,8 +8,6 @@ public class ButtonAudio : MonoBehaviour
     public AudioClip hoverFX;
     public AudioClip clickFX;
 
-
-
     public void HoverSound()
     {
         visitFX.PlayOneShot(hoverFX);
