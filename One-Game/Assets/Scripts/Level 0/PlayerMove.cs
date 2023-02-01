@@ -48,9 +48,6 @@ public class PlayerMove : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGround == true) {  }
 
-        
-
-
             dirX = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(dirX * speed, rb.velocity.y);

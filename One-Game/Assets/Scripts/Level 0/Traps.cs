@@ -1,47 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Traps : MonoBehaviour
 {
-    [SerializeField] private Collider2D cl;
-    [SerializeField] private float speed = 3f;
 
-    private bool H = true;
-    void Start()
+    [SerializeField] private float _speed;
+    [SerializeField] private DeathScrine ds;
+   
+
+    public bool _isReverse = true;
+    private int _minspeed = 3;
+    private int _maxspeed = 25;
+    
+
+    private void Awake()
     {
-        
+        _speed = Random.Range(_minspeed, _maxspeed);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        cl.transform.position = new Vector2(-1500, 10);
-    }
 
+        if (collision.TryGetComponent(out PlayerMove pm))
+        {
+            pm.transform.gameObject.SetActive(false);
+
+            ds.DeathSc();
+        }
+    }
     private void FixedUpdate()
     {
-   
-        if(H == true)
+
+        if(_isReverse)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - Time.deltaTime * speed);
+            transform.position = new Vector2(transform.position.x, transform.position.y - Time.deltaTime * _speed);
         }
 
         if(transform.position.y < 9.5f)
         {
             transform.position = new Vector2(transform.position.x, 9.5f);
 
-            H = false;
+            _isReverse = false;
 
-        }else if(H == false)
+        }else if(_isReverse == false)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y + Time.deltaTime * speed);
+            transform.position = new Vector2(transform.position.x, transform.position.y + Time.deltaTime * _speed);
         }
 
         if(transform.position.y > 20)
         {
             transform.position = new Vector2(transform.position.x, 20);
 
-            H = true;
+            _isReverse = true;
         }
 
     }
