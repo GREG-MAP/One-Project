@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,15 +5,13 @@ public class MenyMeneger : MonoBehaviour
 {
     public GameObject settingspanel;
 
-
-    public void PalayGame()
+    public void _TimeOut()
+    {
+        Invoke("Exit", 2f);
+    }
+    public void PlayGame()
     {
         SceneManager.LoadScene("Game");
-    }
-
-    public void ExitGame ()
-    {
-        Application.Quit();
     }
 
     public void SettingsPanel()
@@ -26,5 +22,10 @@ public class MenyMeneger : MonoBehaviour
     public void Exit ()
     {
         settingspanel.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
