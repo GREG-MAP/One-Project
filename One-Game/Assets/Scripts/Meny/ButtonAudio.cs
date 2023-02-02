@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonAudio : MonoBehaviour
@@ -8,6 +6,10 @@ public class ButtonAudio : MonoBehaviour
     public AudioClip hoverFX;
     public AudioClip clickFX;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
     public void HoverSound()
     {
         visitFX.PlayOneShot(hoverFX);

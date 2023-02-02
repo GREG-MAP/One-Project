@@ -4,10 +4,9 @@ using UnityEngine.SceneManagement;
 public class MenyMeneger : MonoBehaviour
 {
     public GameObject settingspanel;
-
-    public void _TimeOut()
+    private void Awake()
     {
-        Invoke("Exit", 0.4f);
+        DontDestroyOnLoad(transform.gameObject);
     }
     public void PlayGame()
     {

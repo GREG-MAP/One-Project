@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LVLWin : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class LVLWin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        rb.transform.position = new Vector2(-15, 10);
+            SceneManager.LoadScene("Level 1");
     }
 
     private void FixedUpdate()

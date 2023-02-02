@@ -139,9 +139,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd5e4f86fa31d64b89b272faf1eeb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1125849221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 297206086342430749, guid: c72c07709f979464f8f37621f650fbf8, type: 3}
+  m_PrefabInstance: {fileID: 297206085245285948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1125849225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125849221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6231d6a68cba09408812eea073a5174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visitFX: {fileID: 1989982117}
+  hoverFX: {fileID: 8300000, guid: 0ec2766922587394b867b3a42ef83324, type: 3}
+  clickFX: {fileID: 8300000, guid: f9dc4ab0d49267d4187f6ee6462bdf8a, type: 3}
+--- !u!1 &1136428484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3439415461162282567, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
+  m_PrefabInstance: {fileID: 3439415460983942764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1136428489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136428484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd5e4f86fa31d64b89b272faf1eeb3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingspanel: {fileID: 0}
 --- !u!1 &1188213046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3439415462079602522, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
+  m_PrefabInstance: {fileID: 3439415460983942764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1989982117 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3439415461958527398, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
   m_PrefabInstance: {fileID: 3439415460983942764}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &297206085245285948
@@ -352,15 +395,33 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3439415462568466220, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1125849225}
+    - target: {fileID: 3439415462568466220, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1125849225}
+    - target: {fileID: 3439415462568466220, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HoverSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439415462568466220, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClikSound
+      objectReference: {fileID: 0}
     - target: {fileID: 3439415462568466257, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 519420033}
     - target: {fileID: 3439415462568466257, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: _TimeOut
+      value: Exit
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3439415462568466221, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
+    - {fileID: 3439415462568466222, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
 --- !u!1001 &8772330181365312280
 PrefabInstance:
@@ -417,6 +478,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8772330181055615897, guid: 7de2e51cb15621744bfead56ccaf8a84, type: 3}
+      propertyPath: MM
+      value: 
+      objectReference: {fileID: 519420033}
     - target: {fileID: 8772330181055615897, guid: 7de2e51cb15621744bfead56ccaf8a84, type: 3}
       propertyPath: settingspanel
       value: 
