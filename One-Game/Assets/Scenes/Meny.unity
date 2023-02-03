@@ -157,7 +157,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -610,7 +610,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -796,8 +796,6 @@ MonoBehaviour:
   volumeParameter: Buttons
   mixer: {fileID: 24100000, guid: 3b87f391c3ed6574aacf5bae425799d0, type: 2}
   slider: {fileID: 765399500}
-  tg: {fileID: 0}
-  isOn: 0
 --- !u!1 &839123637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1295,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1449,7 +1447,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1674,8 +1672,6 @@ MonoBehaviour:
   volumeParameter: Game
   mixer: {fileID: 24100000, guid: 3b87f391c3ed6574aacf5bae425799d0, type: 2}
   slider: {fileID: 1836632366}
-  tg: {fileID: 284879946}
-  isOn: 0
 --- !u!1 &1947967952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,8 +1868,6 @@ MonoBehaviour:
   volumeParameter: MasterVolume
   mixer: {fileID: 0}
   slider: {fileID: 0}
-  tg: {fileID: 2027139836}
-  isOn: 0
 --- !u!1001 &297206085245285948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2196,7 +2190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3439415462079602522, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3439415462079602523, guid: 36b08e6f235aef84d93d30e0cbdef711, type: 3}
       propertyPath: m_SizeDelta.y
