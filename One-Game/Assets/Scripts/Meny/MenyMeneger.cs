@@ -10,7 +10,7 @@ public class MenyMeneger : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level 0");
     }
 
     public void SettingsPanel()
