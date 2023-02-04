@@ -1,22 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
-    float dirX;
+    public float dirX;
     public float speed = 20f;
 
     public float jumpForce = 10.0f;
     private bool isGround;
     public Transform groundCheck;
+
+    public PlayerMove(Transform groundCheck)
+    {
+        this.groundCheck = groundCheck;
+    }
+
     public LayerMask GroundMask;
 
     public int extraJumps;
     public int numberJumps;
+
     void Start()
     {
         rb.GetComponent<Rigidbody2D>();
