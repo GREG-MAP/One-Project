@@ -8,7 +8,7 @@ public class AudioControll : MonoBehaviour
     public AudioMixer mixer;
     public Slider slider;
 
-    private float _volumeValue;
+    public float _volumeValue;
     private const float _multiplier = 20f;
 
     private void Awake()
