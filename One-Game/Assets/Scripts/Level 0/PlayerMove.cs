@@ -50,9 +50,17 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
 
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGround == true) {  }
+        else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGround == true) { 
+        }else if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = speed * 2;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 20f;
+        }
 
-            dirX = Input.GetAxis("Horizontal");
+        dirX = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
 
