@@ -10,48 +10,54 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce = 10.0f;
     private bool isGround;
     public Transform groundCheck;
+    public LayerMask GroundMask;
 
+    public float ySpeed;
+
+    public int extraJumps;
+    public int numberJumps;
     public PlayerMove(Transform groundCheck)
     {
         this.groundCheck = groundCheck;
     }
-
-    public LayerMask GroundMask;
-
-    public int extraJumps;
-    public int numberJumps;
-
     void Start()
     {
         rb.GetComponent<Rigidbody2D>();
 
         extraJumps = numberJumps;
     }
-
-
     private void Update()
     {
-        isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, GroundMask);
+        isGround = Physics2D.OverlapCircle(groundCheck.position, 0.0001f, GroundMask);
 
         if (isGround == true)
         {
             extraJumps = numberJumps;
+
+            ySpeed = Mathf.Clamp(ySpeed, -0.5f, 100);
+        }else{ 
+
+        ySpeed = Mathf.Clamp(ySpeed, -100f, 100); 
+
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && extraJumps > 0)
+
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             extraJumps--;
         }
+
+        dirX = Input.GetAxis("Horizontal");
+
+        rb.velocity = new Vector2(dirX * speed, ySpeed);
 
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
         {
-            extraJumps--;
-
-            rb.velocity = Vector2.up * jumpForce;
+            ySpeed = 10f;
 
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGround == true) { 
-        }else if (Input.GetKeyDown(KeyCode.LeftShift))
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = speed * 2;
         }
@@ -60,10 +66,9 @@ public class PlayerMove : MonoBehaviour
             speed = 20f;
         }
 
-        dirX = Input.GetAxis("Horizontal");
+        ySpeed += Physics2D.gravity.y * Time.deltaTime;
 
-        rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
-
+        
     }
 }
   
