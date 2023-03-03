@@ -7,7 +7,6 @@ public class PlayerMove : MonoBehaviour
     public float dirX;
     public float speed = 20f;
 
-    public float jumpForce = 10f;
     private bool isGround;
     public Transform groundCheck;
     public LayerMask GroundMask;
@@ -27,10 +26,15 @@ public class PlayerMove : MonoBehaviour
         extraJumps = numberJumps;
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawCube(groundCheck.position, new Vector2(1.3f,0.2f));
+    }
+
     private void Update()
     {
 
-        isGround = Physics2D.OverlapCircle(groundCheck.position, 0.0001f, GroundMask);
+        isGround = Physics2D.OverlapBox(groundCheck.position, new Vector2(1.3f,0.2f), 0, GroundMask);
 
         if (isGround == true)
         {
@@ -38,7 +42,10 @@ public class PlayerMove : MonoBehaviour
 
             ySpeed = Mathf.Clamp(ySpeed, -0.5f, 100);
 
-        }else{ 
+            Debug.Log(isGround);
+
+        }
+        else{ 
 
             ySpeed = Mathf.Clamp(ySpeed, -100f, 100); 
 
@@ -68,7 +75,7 @@ public class PlayerMove : MonoBehaviour
             speed = 20f;
         }
 
-        ySpeed += Physics2D.gravity.y * Time.deltaTime * 2f;
+        ySpeed += Physics2D.gravity.y * Time.deltaTime * 3f;
 
 
     }
