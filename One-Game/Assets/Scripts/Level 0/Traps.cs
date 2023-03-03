@@ -8,8 +8,8 @@ public class Traps : MonoBehaviour
    
 
     public bool _isReverse = true;
-    private int _minspeed = 10;
-    private int _maxspeed = 30;
+    private int _minspeed = 15;
+    private int _maxspeed = 35;
     
 
     private void Awake()

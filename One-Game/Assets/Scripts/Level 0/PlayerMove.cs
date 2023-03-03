@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     public float dirX;
     public float speed = 20f;
 
-    public float jumpForce = 10.0f;
+    public float jumpForce = 10f;
     private bool isGround;
     public Transform groundCheck;
     public LayerMask GroundMask;
@@ -26,8 +26,10 @@ public class PlayerMove : MonoBehaviour
 
         extraJumps = numberJumps;
     }
+
     private void Update()
     {
+
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.0001f, GroundMask);
 
         if (isGround == true)
@@ -35,9 +37,10 @@ public class PlayerMove : MonoBehaviour
             extraJumps = numberJumps;
 
             ySpeed = Mathf.Clamp(ySpeed, -0.5f, 100);
+
         }else{ 
 
-        ySpeed = Mathf.Clamp(ySpeed, -100f, 100); 
+            ySpeed = Mathf.Clamp(ySpeed, -100f, 100); 
 
         }
 
@@ -53,22 +56,21 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
         {
-            ySpeed = 10f;
-
+            ySpeed = 13f;
         }
         
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = speed * 2;
+            speed = speed * 1.5f;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = 20f;
         }
 
-        ySpeed += Physics2D.gravity.y * Time.deltaTime;
+        ySpeed += Physics2D.gravity.y * Time.deltaTime * 2f;
 
-        
+
     }
 }
   
