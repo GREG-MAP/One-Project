@@ -61,7 +61,7 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
         {
-            ySpeed = 13f;
+            ySpeed = 15f;
         }
         
         if (Input.GetKeyDown(KeyCode.LeftShift))
