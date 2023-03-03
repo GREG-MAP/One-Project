@@ -42,8 +42,6 @@ public class PlayerMove : MonoBehaviour
 
             ySpeed = Mathf.Clamp(ySpeed, -0.5f, 100);
 
-            Debug.Log(isGround);
-
         }
         else{ 
 
