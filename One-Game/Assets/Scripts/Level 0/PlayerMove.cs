@@ -28,13 +28,13 @@ public class PlayerMove : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawCube(groundCheck.position, new Vector2(1.3f,0.2f));
+        Gizmos.DrawCube(groundCheck.position, new Vector2(1.7f,0.2f));
     }
 
     private void Update()
     {
 
-        isGround = Physics2D.OverlapBox(groundCheck.position, new Vector2(1.3f,0.2f), 0, GroundMask);
+        isGround = Physics2D.OverlapBox(groundCheck.position, new Vector2(1.7f,0.2f), 0, GroundMask);
 
         if (isGround == true)
         {
